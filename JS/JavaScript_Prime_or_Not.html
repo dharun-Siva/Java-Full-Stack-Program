@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number or nor</title>
+    <script>
+        function prime()
+        {
+            var num = document.getElementById("num").value;
+            var flag = 0;
+            for(var i = 2; i < num; i++)
+            {
+                if(num % i == 0)
+                {
+                    flag = 1;
+                    break;
+                } 
+                    
+            }
+                    if(flag == 0)
+                    {
+                        document.getElementById("result").innerHTML = "Prime Number";
+                    }
+                        else
+                        {
+                            document.getElementById("result").innerHTML = "Not a Prime Number";
+                        }
+
+        }
+                            
+    </script>
+    </head>
+    <body>
+        <h1>Prime Number or not</h1>
+        <form>
+            <input type="text" id="num" placeholder="Enter a number">
+            <input type="button" value="Check" onclick="prime()">
+            <p id="result"></p>
+            </body>
+            </html>
