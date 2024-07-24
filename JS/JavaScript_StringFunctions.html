@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String functions</title>
+    <script>
+        function StringLength()
+        {
+            var str=document.getElementById("s").value;
+            var l=str.length;
+            document.getElementById("ResultDiv").innerHTML="<b>length:" +l+ "</b>"; 
+        }
+        function StringcharAt()
+        {
+            var str=document.getElementById("s").value;
+            var ch=str.charAt(2);
+            document.getElementById("ResultDiv").innerHTML="<b>character at index 2:" +ch+ "</b>";
+        }
+        function StringSlice()
+        {
+            var str=document.getElementById("s").value;
+            var sl=str.slice(0,2);
+            document.getElementById("ResultDiv").innerHTML="<b>Sliced character: " +sl+ "</b>";
+        }
+        function StringSubstring()
+        {
+            var str=document.getElementById("s").value;
+            var sub=str.substring(0,2);
+            document.getElementById("ResultDiv").innerHTML="<b>" +sub+ "</b>";
+        }
+        function Stringtoupper()
+        {
+            var str=document.getElementById("s").value;
+            var up=str.toUpperCase();
+            document.getElementById("ResultDiv").innerHTML="<b>" +up+ "</b>";
+        }
+        function Stringtolower()
+        {
+            var str=document.getElementById("s").value;
+            var low=str.toLowerCase();
+            document.getElementById("ResultDiv").innerHTML="<b>" +low+ "</b>";
+        }
+        function Stringconcat()
+        {
+            var str=document.getElementById("s").value;
+            var str1=document.getElementById("s1").value;
+            var con=str.concat(str1);
+            document.getElementById("ResultDiv").innerHTML="<b>" +con+ "</b>";
+        }
+        function StringTrim()
+        {
+            var str=document.getElementById("s").value;
+            var str1=document.getElementById("s1").value;
+            var con=str.concat(str1);
+            var trim=con.trim();
+            document.getElementById("ResultDiv").innerHTML="<b>" +trim+ "</b>";
+        }
+        function StringTrimStart()
+        {
+            var str=document.getElementById("s").value;
+            var str1=document.getElementById("s1").value;
+            var con=str.concat(str1);
+            var trim=con.trimStart();
+            document.getElementById("ResultDiv").innerHTML="<b>" +trim+ "</b>";
+        }
+        function StringTrimEnd()
+        {
+            var str=document.getElementById("s").value;
+            var str1=document.getElementById("s1").value;
+            var con=str.concat(str1);
+            var trim=con.trimEnd();
+            document.getElementById("ResultDiv").innerHTML="<b>" +trim+ "</b>";
+        }
+        function StringRepeat()
+        {
+            var str=document.getElementById("s").value;
+            var str1=document.getElementById("s1").value;
+            var con=str.concat(str1);
+            var repeat=con.repeat(5);
+            document.getElementById("ResultDiv").innerHTML="<b>" +repeat+ "</b>";
+        }
+        function StringReplace()
+        {
+            var str=document.getElementById("s").value;
+            var str1=document.getElementById("s1").value;
+            var str2=document.getElementById("s2").value;
+            var con=str.concat(str1);
+            var replace=con.replace(str2,"");
+            document.getElementById("ResultDiv").innerHTML="<b>" +replace+ "</b>";
+        }
+        function StringReplaceAll()
+        {
+            var str=document.getElementById("s").value;
+            var str1=document.getElementById("s1").value;
+            var str2=document.getElementById("s2").value;
+            var con=str.concat(str1);
+            var replace=con.replaceAll(str2,"");
+            document.getElementById("ResultDiv").innerHTML="<b>" +replace+ "</b>";
+        }
+        function StringSplit()
+        {
+            var str=document.getElementById("s").value;
+            var str1=document.getElementById("s1").value;
+            var con=str.concat(str1);
+            var split=con.split(" ");
+            document.getElementById("ResultDiv").innerHTML="<b>" +split+ "</b>";
+        }
+    </script>
+</head>
+<body>
+    Enter a String<input type="text" id="s" value="enter a string" onfocus="this.value=' '"><br><br>
+    Enter a String<input type="text" id="s1" value="enter a string" onfocus="this.value=' '"><br><br>
+    Enter a String<input type="text" id="s2" value="enter a string" onfocus="this.value=' '"><br><br>
+    <button onclick="StringLength()">Length</button><br><br>
+    <button onclick="StringcharAt()">CharAt</button><br><br>
+    <button onclick="StringSlice()">Slicing</button><br><br>
+    <button onclick="StringSubstring()">Substring</button><br><br>
+    <button onclick="Stringtoupper()">ToUpper</button><br><br>
+    <button onclick="Stringtolower()">ToLower</button><br><br>
+    <button onclick="StringTrim()">Trim</button><br><br>
+    <button onclick="StringTrimStart()">Trim Start</button><br><br>
+    <button onclick="StringTrimEnd()">Trim End</button><br><br>
+    <button onclick="StringRepeat()">Repeat</button><br><br>
+    <button onclick="StringReplace()">Replace</button><br><br>
+    <button onclick="StringReplaceAll()">Replace All</button><br><br>
+    <button onclick="StringSplit()">Split</button><br><br>
+    <div id="ResultDiv"></div>
+</body>
+</html>
