@@ -1,0 +1,49 @@
+ <!-- <h1>Interpolation Example</h1> 
+ <app-child></app-child> 
+ <b>
+    My Name:{{name}}<br>
+    My Age:{{age}}<br>
+    Email:<input type="text" value="{{email}}"><br>
+
+    Addition:{{getAddition(10,20)}}
+</b>
+
+<h1>Property Binding Example</h1>
+<font [color]="txtColor">
+My Name:<input type="text" [value]="name"/><br>
+My Age:<input type="text" [value]="age"/><br>
+My Email:<input type="text" [value]="email"/><br>
+</font>
+
+<h1>Event Binding Example</h1>
+<button (click)="changeName()">Change Name</button><br>
+<button (click)="changeAge()">Change Age</button><br>
+<button (click)="changeEmail()">Change Email</button><br>-->
+
+<h1>Two Way Data Binding Example</h1>
+Enter your First Name<input type="text"[(ngModel)]="fname">
+<br>
+welcome: {{fname}}
+
+<!-- <h1>Angular Structural Directories</h1>
+<button (click)="changeFlag()">Show Or Hide Div</button>
+<br>
+<div *ngIf="flag" [ngStyle]="myStyle">-->
+<!-- <h1>Angular Structural Directories</h1> -->
+<!--<ul>
+    <li *ngFor="let vec of vehicles" (click)="setSelectedItem(vec)">{{ vec }}</li>
+</ul>
+<br>
+<b [ngClass]="myClass">You Have Selected : {{selectedVehicle}}</b>
+<br>
+<div [ngSwitch]="selectedVehicle">
+<font color="blue" *ngSwitchCase="'TwoWheeler'">Bike</font>
+<font color="blue" *ngSwitchCase="'ThreeWheeler'">Auto</font>
+<font color="blue" *ngSwitchCase="'FourWheeler'">Car</font>
+<font color="blue" *ngSwitchDefault>Invalid</font>
+
+</div>
+<br>
+<button (click)="changeClass()">Change Class</button>
+</div>
+<br> -->
