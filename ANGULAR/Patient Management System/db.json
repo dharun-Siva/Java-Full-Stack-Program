@@ -26,6 +26,15 @@
       "patientIssue": "maleria",
       "patientAd": "2024-08-05",
       "patientDd": "2024-08-17"
+    },
+    {
+      "id": "7377",
+      "patientName": "Dharun Siva",
+      "patientAge": "25",
+      "patientCity": "Chennai",
+      "patientIssue": "Fever",
+      "patientAd": "2024-08-04",
+      "patientDd": "2024-08-07"
     }
   ]
 }
