@@ -1,0 +1,392 @@
+
+DAY 2 SQL:
+
+
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+         1 Arun                       6000
+
+SQL> select * from tbl_employee where esalary between 2000 and 8000;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+         3 Ram                        4000
+         1 Arun                       6000
+
+SQL> select * from tbl_employee where esalary not between 2000 and 8000;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         4 Ajay                       9000
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+         1 Arun                       6000
+
+SQL> select * from tbl_employee where esalary >=5000 and eid in (1,3);
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Arun                       6000
+
+SQL> select * from tbl_employee where esalary >4000 or eid in (1,3);
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+         1 Arun                       6000
+
+
+SQL> select * from tbl_employee where ename like 'A%';
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         4 Ajay                       9000
+         1 Arun                       6000
+
+SQL> select * from tbl_employee where ename like '_a%';
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         3 Ram                        4000
+
+SQL> select * from tbl_employee where ename not like '_a%';
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+         4 Ajay                       9000
+         1 Arun                       6000
+
+SQL> select * from tbl_employee where ename not like 'A%';
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+         3 Ram                        4000
+
+SQL> select * from tbl_employee where ename like '%a%';
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+
+SQL> select * from tbl_employee where ename not like '%a%';
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Arun                       6000
+
+SQL> insert into tbl_employee (eid,esalary) values (5,6000);
+
+1 row created.
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+         1 Arun                       6000
+         5                            6000
+
+SQL> select * from tbl_employee where enam is null;
+select * from tbl_employee where enam is null
+                                 *
+ERROR at line 1:
+ORA-00904: "ENAM": invalid identifier
+
+
+SQL> select * from tbl_employee where ename is null;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         5                            6000
+
+SQL> select * from tbl_employee where ename is not null;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+         1 Arun                       6000
+
+
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+         1 Arun                       6000
+         5                            6000
+
+SQL> select * from tbl_employee order by eid;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Arun                       6000
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+         5                            6000
+
+SQL> select * from tbl_employee order by eid desc;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         5                            6000
+         4 Ajay                       9000
+         3 Ram                        4000
+         2 Kumar                      7000
+         1 Arun                       6000
+
+SQL> select * from tbl_employee order by ename;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         4 Ajay                       9000
+         1 Arun                       6000
+         2 Kumar                      7000
+         3 Ram                        4000
+         5                            6000
+
+SQL> select * from tbl_employee order by ename desc;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         5                            6000
+         3 Ram                        4000
+         2 Kumar                      7000
+         1 Arun                       6000
+         4 Ajay                       9000
+
+SQL> insert into tbl_employee values (1,'Bala',8000);
+
+1 row created.
+
+SQL> select * from tbl_employee order by eid,ename;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Arun                       6000
+         1 Bala                       8000
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+         5                            6000
+
+6 rows selected.
+
+SQL> select * from tbl_employee order by eid,ename desc;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Bala                       8000
+         1 Arun                       6000
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+         5                            6000
+
+6 rows selected.
+
+SQL> alter table tbl_employee add Doj date;
+
+Table altered.
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY DOJ
+---------- -------------------- ---------- ---------
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+         1 Arun                       6000
+         5                            6000
+         1 Bala                       8000
+
+6 rows selected.
+
+
+
+SQL> update tbl_employee set doj=sysdate where eid=3;
+
+1 row updated.
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY DOJ
+---------- -------------------- ---------- ---------
+         2 Kumar                      7000
+         3 Ram                        4000 07-AUG-24
+         4 Ajay                       9000
+         1 Arun                       6000
+         5                            6000
+         1 Bala                       8000
+
+6 rows selected.
+
+SQL> update tbl_employee set doj='10-Jan-2004' where eid=4;
+
+1 row updated.
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY DOJ
+---------- -------------------- ---------- ---------
+         2 Kumar                      7000
+         3 Ram                        4000 07-AUG-24
+         4 Ajay                       9000 10-JAN-04
+         1 Arun                       6000
+         5                            6000
+         1 Bala                       8000
+
+6 rows selected.
+
+SQL> alter table tbl_employee drop column Doj;
+
+Table altered.
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+         1 Arun                       6000
+         5                            6000
+         1 Bala                       8000
+
+6 rows selected.
+
+SQL> desc tbl_employee
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                NUMBER(5)
+ ENAME                                              VARCHAR2(20)
+ ESALARY                                            NUMBER(5)
+
+SQL> alter table tbl_employee modify esalary number(7);
+
+Table altered.
+
+SQL> desc tbl_employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                NUMBER(5)
+ ENAME                                              VARCHAR2(20)
+ ESALARY                                            NUMBER(7)
+
+SQL> alter table tbl_employee modify esalary number(4);
+alter table tbl_employee modify esalary number(4)
+                                *
+ERROR at line 1:
+ORA-01440: column to be modified must be empty to decrease precision or scale
+
+
+SQL> alter table tbl_employee rename esalary employeeSal;
+alter table tbl_employee rename esalary employeeSal
+                                *
+ERROR at line 1:
+ORA-14155: missing PARTITION or SUBPARTITION keyword
+
+
+SQL> alter table tbl_employee rename column esalary to  emp_sal;
+
+Table altered.
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   EMP_SAL
+---------- -------------------- ----------
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+         1 Arun                       6000
+         5                            6000
+         1 Bala                       8000
+
+6 rows selected.
+
+SQL> rename tbl_employee to tbl_emp;
+
+Table renamed.
+
+SQL> truncate table tbl_emp;
+
+Table truncated.
+
+SQL> select * from tbl_employee;
+select * from tbl_employee
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select * from tbl_emp;
+
+no rows selected
+
+SQL> desc tbl_emp;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                NUMBER(5)
+ ENAME                                              VARCHAR2(20)
+ EMP_SAL                                            NUMBER(7)
+
+SQL> drop table tbl_emp;
+
+Table dropped.
+
+SQL> desc tbl_emp;
+ERROR:
+ORA-04043: object tbl_emp does not exist
+
+
+SQL> desc USER_RECYCLEBIN;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OBJECT_NAME                               NOT NULL VARCHAR2(30)
+ ORIGINAL_NAME                                      VARCHAR2(32)
+ OPERATION                                          VARCHAR2(9)
+ TYPE                                               VARCHAR2(25)
+ TS_NAME                                            VARCHAR2(30)
+ CREATETIME                                         VARCHAR2(19)
+ DROPTIME                                           VARCHAR2(19)
+ DROPSCN                                            NUMBER
+ PARTITION_NAME                                     VARCHAR2(32)
+ CAN_UNDROP                                         VARCHAR2(3)
+ CAN_PURGE                                          VARCHAR2(3)
+ RELATED                                   NOT NULL NUMBER
+ BASE_OBJECT                               NOT NULL NUMBER
+ PURGE_OBJECT                              NOT NULL NUMBER
+ SPACE                                              NUMBER
+
+SQL> flashback table tbl_emp on before drop;
+flashback table tbl_emp on before drop
+*
+ERROR at line 1:
+ORA-00439: feature not enabled: Flashback Table
+

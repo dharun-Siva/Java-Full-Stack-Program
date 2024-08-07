@@ -1,0 +1,220 @@
+DAY 1 SQL:
+
+
+
+SQL> create table tbl_employee(eid number(5), ename varchar2(20), esalary number(5));
+
+Table created.
+
+SQL> desc tbl_employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                NUMBER(5)
+ ENAME                                              VARCHAR2(20)
+ ESALARY                                            NUMBER(5)
+
+SQL> insert into tbl_employee values(1,'Dharun',2000);
+
+1 row created.
+
+SQL> insert into tbl_employee values(2,'Kumar',3000);
+
+1 row created.
+
+SQL> insert into tbl_employee values(3,'Ram',4000);
+
+1 row created.
+
+SQL> insert into tbl_employee values(4,'Karthi',5000);
+
+1 row created.
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Dharun                     2000
+         2 Kumar                      3000
+         3 Ram                        4000
+         4 Karthi                     5000
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select eid,esalary from tbl_employee;
+
+       EID    ESALARY
+---------- ----------
+         1       2000
+         2       3000
+         3       4000
+         4       5000
+
+SQL> insert into tbl_employee values (1,'Arun',6000);
+
+1 row created.
+
+SQL> select eid from tbl_employee;
+
+       EID
+----------
+         1
+         2
+         3
+         4
+         1
+
+SQL> select distinct eid from tbl_employee;
+
+       EID
+----------
+         1
+         2
+         4
+         3
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Dharun                     2000
+         2 Kumar                      3000
+         3 Ram                        4000
+         4 Karthi                     5000
+         1 Arun                       6000
+
+SQL> select * from tbl_employee where eid = 1;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Dharun                     2000
+         1 Arun                       6000
+
+SQL> select * from tbl_employee where ename = 'Arun';
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Arun                       6000
+
+SQL> select * from tbl_employee where esalary > 4000;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         4 Karthi                     5000
+         1 Arun                       6000
+
+SQL> select * from tbl_employee where ename != 'Arun';
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Dharun                     2000
+         2 Kumar                      3000
+         3 Ram                        4000
+         4 Karthi                     5000
+
+SQL> select * from tbl_employee where ename <>  'Arun';
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Dharun                     2000
+         2 Kumar                      3000
+         3 Ram                        4000
+         4 Karthi                     5000
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Dharun                     2000
+         2 Kumar                      3000
+         3 Ram                        4000
+         4 Karthi                     5000
+         1 Arun                       6000
+
+SQL> update tbl_employee set esalary=7000 where eid=2;
+
+1 row updated.
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Dharun                     2000
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Karthi                     5000
+         1 Arun                       6000
+
+SQL> commit;
+
+Commit complete.
+
+SQL> update tbl_employee set esalary=9000, ename='Ajay' where eid=4;
+
+1 row updated.
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Dharun                     2000
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+         1 Arun                       6000
+
+SQL> delete from tbl_employee where eid=1;
+
+2 rows deleted.
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from tbl_employee where eid in(3,4);
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         3 Ram                        4000
+         4 Ajay                       9000
+
+SQL> select * from tbl_employee where eid not in(3,4);
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+
+SQL> insert into tbl_employee values (1,'Arun',6000);
+
+1 row created.
+
+SQL> select * from tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Kumar                      7000
+         3 Ram                        4000
+         4 Ajay                       9000
+         1 Arun                       6000
+
+
+
+
