@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Employee Management System</title>
+<style>
+body {
+    background-color: grey;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    flex-direction: column;
+}
+label {
+    padding: 10px;
+}
+h2 {
+color : black;
+}
+a {
+text-decoration : none;
+color : black;
+}
+button {
+padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+</style>
+</head>
+<body>
+<h2>Employee Management System</h2>
+    <form action="SubmitServlet" method="POST">
+        <label for="id">Id: </label>
+        <input type="number" name="id" id="id" required /><br>
+        
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" required /><br>
+        
+        <label for="salary">Salary:</label>
+        <input type="number" name="salary" id="salary" required /><br>
+        
+        <label for="exp">Experience: </label>
+        <input type="number" name="exp" id="exp" required /><br>
+        
+        <input type="submit" value="Submit" />
+        
+    </form>
+    <br>
+    
+    <button><a href="view.jsp"  style="color :blue">View</a></button>
+    <button><a href="update.jsp"  style="color :green">Update</a></button>
+    <button><a href="delete.jsp" style="color :red">Delete</a></button>
+    
+    
+    
+</body>
+</html>
